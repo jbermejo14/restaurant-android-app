@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RestaurantApp</string>
+    <string name="username"/>
+    <string name="password"/>
+    <string name="Register"/>
+    <string name="Log_In"/>
+    <string name="email"/>
+</resources>
