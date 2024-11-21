@@ -1,11 +1,15 @@
 package com.example.restaurantapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.restaurantapp.adapter.CustomerAdapter;
 import com.example.restaurantapp.domain.Customer;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -29,6 +33,25 @@ public class CustomerActivity extends AppCompatActivity {
 
         customerAdapter = new CustomerAdapter(customerList);
         customerView.setAdapter(customerAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_bar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onCreateItemSelected(@NotNull MenuItem item) {
+        if (item.getItemId() == R.id.action_map) {
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
+        } else if (item.getItemId()  == R.id.action_register_customer) {
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
+        }
+
+        return true;
     }
 
     private void populateList() {
