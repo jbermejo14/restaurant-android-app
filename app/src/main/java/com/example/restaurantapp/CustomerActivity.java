@@ -41,7 +41,6 @@ public class CustomerActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
     public boolean onCreateItemSelected(@NotNull MenuItem item) {
         if (item.getItemId() == R.id.action_map) {
             Intent intent = new Intent(this, RegisterActivity.class);
@@ -50,7 +49,6 @@ public class CustomerActivity extends AppCompatActivity {
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
         }
-
         return true;
     }
 

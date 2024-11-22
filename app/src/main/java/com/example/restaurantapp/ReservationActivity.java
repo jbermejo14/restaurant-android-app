@@ -22,7 +22,7 @@ public class ReservationActivity extends AppCompatActivity {
 
         populateList();
 
-        RecyclerView customerView = findViewById(R.id.customer_view);
+        RecyclerView customerView = findViewById(R.id.reservation_view);
         customerView.hasFixedSize();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         customerView.setLayoutManager(layoutManager);
@@ -33,7 +33,6 @@ public class ReservationActivity extends AppCompatActivity {
 
     private void populateList() {
         reservationList = new ArrayList<>();
-        reservationList.add(new Reservation(1, "James", "email@email.com", "312341234", "adfasdfasdf", LocalDate.now()));
     }
 
 }
