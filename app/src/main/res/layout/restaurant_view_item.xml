@@ -9,19 +9,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:padding="26dp"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp">
 
         <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="143dp"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:srcCompat="@mipmap/img_user"
                 tools:srcCompat="@mipmap/img_user"/>
 
         <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -29,12 +30,12 @@
             <TextView
                     android:id="@+id/item_name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="53dp"/>
 
             <TextView
                     android:id="@+id/item_address"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="53dp"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

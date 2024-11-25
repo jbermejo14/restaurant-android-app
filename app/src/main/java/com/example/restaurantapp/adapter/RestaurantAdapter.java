@@ -1,5 +1,6 @@
 package com.example.restaurantapp.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,9 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.restaurantapp.R;
-import com.example.restaurantapp.domain.Customer;
 import com.example.restaurantapp.domain.Restaurant;
-import org.jetbrains.annotations.NotNull;
+import com.example.restaurantapp.view.DetailRestaurantActivity;
+
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         this.restaurantList = restaurantList;
     }
 
-    @NotNull
+    @NonNull
     @Override
     public RestaurantAdapter.RestaurantHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -30,9 +31,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RestaurantAdapter.RestaurantHolder restaurantHolder, int position) {
-        restaurantHolder.name.setText(restaurantList.get(position).getName());
-        restaurantHolder.address.setText(restaurantList.get(position).getAddress());
+    public void onBindViewHolder(@NonNull RestaurantAdapter.RestaurantHolder holder, int position) {
+        holder.name.setText(restaurantList.get(position).getName());
+        holder.address.setText(restaurantList.get(position).getAddress());
     }
 
     @Override
@@ -50,6 +51,16 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
             name = itemView.findViewById(R.id.item_name);
             address = itemView.findViewById(R.id.item_address);
+
+            itemView.setOnClickListener(view -> {
+                Intent intent = new Intent(itemView.getContext(), DetailRestaurantActivity.class);
+
+                intent.putExtra("name", name.getText().toString());
+                intent.putExtra("address", address.getText().toString());
+
+                itemView.getContext().startActivity(intent);
+            });
         }
+
     }
 }
