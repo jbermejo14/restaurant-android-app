@@ -1,15 +1,13 @@
 package com.example.restaurantapp;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.restaurantapp.adapter.RestaurantAdapter;
 import com.example.restaurantapp.domain.Restaurant;
-import org.jetbrains.annotations.NotNull;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,17 +18,17 @@ public class RestaurantActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.customer_activity);
+        setContentView(R.layout.restaurant_activity);
 
         populateList();
 
-        RecyclerView customerView = findViewById(R.id.customer_view);
-        customerView.hasFixedSize();
+        RecyclerView restaurantView = findViewById(R.id.restaurant_view);
+        restaurantView.hasFixedSize();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        customerView.setLayoutManager(layoutManager);
+        restaurantView.setLayoutManager(layoutManager);
 
         restaurantAdapter = new RestaurantAdapter(restaurantList);
-        customerView.setAdapter(restaurantAdapter);
+        restaurantView.setAdapter(restaurantAdapter);
     }
 
 //    @Override
@@ -55,6 +53,8 @@ public class RestaurantActivity extends AppCompatActivity {
     private void populateList() {
         restaurantList = new ArrayList<>();
         restaurantList.add(new Restaurant(1, "8 eat", "Calle San Jorge 45", "312341234", 53.807880, -1.775238));
+        restaurantList.add(new Restaurant(2, "Burger madness", "Avenida Lilycroft 7", "312341234", 53.807880, -1.775238));
+        restaurantList.add(new Restaurant(3, "Allue Pizzas", "Plaza Lopez Allue 1", "312341234", 53.807880, -1.775238));
     }
 
 }
