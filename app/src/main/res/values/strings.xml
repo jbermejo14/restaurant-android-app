@@ -5,4 +5,5 @@
     <string name="Register"/>
     <string name="Log_In"/>
     <string name="email"/>
+    <string name="plus">+</string>
 </resources>

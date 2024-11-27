@@ -41,17 +41,6 @@ public class CustomerActivity extends AppCompatActivity {
         return true;
     }
 
-    public boolean onCreateItemSelected(@NotNull MenuItem item) {
-        if (item.getItemId() == R.id.action_map) {
-            Intent intent = new Intent(this, RegisterActivity.class);
-            startActivity(intent);
-        } else if (item.getItemId()  == R.id.action_register_customer) {
-            Intent intent = new Intent(this, RegisterActivity.class);
-            startActivity(intent);
-        }
-        return true;
-    }
-
     private void populateList() {
         customerList = new ArrayList<>();
         customerList.add(new Customer(1, "James", "email@email.com", "312341234", "adfasdfasdf", LocalDate.now()));

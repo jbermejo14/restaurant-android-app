@@ -8,7 +8,8 @@ public class MenuItem {
     private String description;
     private double price;
     private String category;
-    private Boolean isVegetarian;
+    private boolean isVegetarian;
+    public boolean isSelected;
 
     public MenuItem(long id, String name, String description, double price, String category, Boolean isVegetarian) {
         this.id = id;
@@ -17,7 +18,10 @@ public class MenuItem {
         this.price = price;
         this.category = category;
         this.isVegetarian = isVegetarian;
+        this.isSelected = false;
     }
+
+
 
     public long getId() {
         return id;
@@ -65,5 +69,13 @@ public class MenuItem {
 
     public void setVegetarian(Boolean vegetarian) {
         isVegetarian = vegetarian;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 }
