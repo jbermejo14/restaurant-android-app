@@ -67,8 +67,14 @@ public class DetailRestaurantActivity extends AppCompatActivity {
 
     private void populateList() {
         menuItemList = new ArrayList<>();
-        menuItemList.add(new MenuItem(1, "Curry con pollo", "Arroz con salsa de curry con trozos de pollo ruso con picante", 2.0, "arroces", false));
-        menuItemList.add(new MenuItem(1, "Hamburgues de quesa", "hamburguesa de ternera con salsa queso chedar", 2.0, "arroces", false));
-        menuItemList.add(new MenuItem(1, "panini ingles", "Panini con salsa roquefort y ternera", 2.0, "arroces", false));
+        menuItemList.add(new MenuItem(1, "Curry con Pollo", "Arroz con salsa de curry con trozos de pollo con picante", 2.0, "arroces", false));
+        menuItemList.add(new MenuItem(2, "Hamburgues de Queso", "hamburguesa de ternera con salsa queso chedar", 2.0, "arroces", false));
+        menuItemList.add(new MenuItem(3, "Panini Italiano", "Panini con salsa roquefort y ternera", 2.0, "arroces", false));
+        menuItemList.add(new MenuItem(4, "Arroz a la Cubana", "Arroz con salsa de tomate con huevo y platano frito", 2.0, "arroces", false));
+        menuItemList.add(new MenuItem(5, "Salmon con Soja", "Salmon noruego con salsa de soja", 2.0, "arroces", false));
+        menuItemList.add(new MenuItem(6, "Pizza 4 Quesos", "Clasica pizza de 4 quesos", 2.0, "arroces", false));
+
+
+
     }
 }
