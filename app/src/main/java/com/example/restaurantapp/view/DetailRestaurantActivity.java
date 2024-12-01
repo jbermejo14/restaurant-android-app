@@ -4,16 +4,12 @@ package com.example.restaurantapp.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.restaurantapp.MapActivity;
 import com.example.restaurantapp.R;
-import com.example.restaurantapp.RegisterActivity;
-import com.example.restaurantapp.RestaurantActivity;
 import com.example.restaurantapp.adapter.MenuItemAdapter;
 import com.example.restaurantapp.domain.MenuItem;
 import org.jetbrains.annotations.NotNull;
@@ -58,7 +54,7 @@ public class DetailRestaurantActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MapActivity.class);
             startActivity(intent);
         } else if (item.getItemId()  == R.id.action_register_customer) {
-            Intent intent = new Intent(this, RestaurantActivity.class);
+            Intent intent = new Intent(this, RestaurantListView.class);
             startActivity(intent);
         }
 
