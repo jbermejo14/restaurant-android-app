@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.restaurantapp.R;
 import com.example.restaurantapp.domain.Restaurant;
-import com.example.restaurantapp.view.DetailRestaurantActivity;
+import com.example.restaurantapp.view.MenuItemListView;
 
 
 import java.util.List;
@@ -53,7 +53,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
             address = itemView.findViewById(R.id.item_address);
 
             itemView.setOnClickListener(view -> {
-                Intent intent = new Intent(itemView.getContext(), DetailRestaurantActivity.class);
+                Intent intent = new Intent(itemView.getContext(), MenuItemListView.class);
 
                 intent.putExtra("name", name.getText().toString());
                 intent.putExtra("address", address.getText().toString());
