@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-public interface CustomerApiInterface {
+public interface CustomersApiInterface {
 
     @GET("customers")
     Call<List<Customer>> getCustomers();
