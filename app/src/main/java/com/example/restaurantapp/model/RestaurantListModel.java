@@ -15,10 +15,10 @@ import retrofit2.Response;
 public class RestaurantListModel implements RestaurantListContract.Model {
 
     @Override
-    public void loadCars(OnRestaurantLoadedListener listener) {
-        RestaurantsApiInterface carsApi = RestaurantsApi.buildInstance();
-        Call<List<Restaurant>> getCarsCall = carsApi.getRestaurants();
-        getCarsCall.enqueue(new Callback<List<Restaurant>>() {
+    public void loadRestaurants(OnRestaurantLoadedListener listener) {
+        RestaurantsApiInterface restaurantsApi = RestaurantsApi.buildInstance();
+        Call<List<Restaurant>> getRestaurantsCall = restaurantsApi.getRestaurants();
+        getRestaurantsCall.enqueue(new Callback<List<Restaurant>>() {
             @Override
             public void onResponse(Call<List<Restaurant>> call, Response<List<Restaurant>> response) {
                 if (response.code() == 200) {

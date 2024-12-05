@@ -1,4 +1,4 @@
-package com.example.restaurantapp.model;
+package com.example.restaurantapp.presenter;
 
 import com.example.restaurantapp.contract.RestaurantListContract;
 import com.example.restaurantapp.domain.Restaurant;

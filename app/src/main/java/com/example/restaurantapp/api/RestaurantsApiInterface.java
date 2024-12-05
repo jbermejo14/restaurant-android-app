@@ -11,9 +11,9 @@ import retrofit2.http.Path;
 
 public interface RestaurantsApiInterface {
 
-    @GET("restaurnts")
+    @GET("restaurants")
     Call<List<Restaurant>> getRestaurants();
 
-    @POST("users/{id}/restaurants")
-    Call<Restaurant> addRestaurant(@Path("id") int id, @Body Restaurant car);
+    @POST("restaurants")
+    Call<Restaurant> addRestaurant(@Path("id") int id, @Body Restaurant restaurant);
 }
