@@ -1,6 +1,5 @@
 package com.example.restaurantapp.adapter;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.restaurantapp.R;
 import com.example.restaurantapp.domain.MenuItem;
-import com.example.restaurantapp.domain.Restaurant;
-import com.example.restaurantapp.view.DetailRestaurantActivity;
 
 
 import java.util.List;
