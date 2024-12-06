@@ -9,15 +9,23 @@ public class Customer {
     private String email;
     private String phone;
     private String password;
-    private LocalDate dateJoined;
+    private String role;
 
-    public Customer(long id, String name, String email, String phone, String password, LocalDate dateJoined) {
-        this.id = id;
+
+    public Customer(String name, String email, String phone, String password, String role) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.password = password;
-        this.dateJoined = dateJoined;
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public long getId() {
@@ -58,13 +66,5 @@ public class Customer {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public LocalDate getDateJoined() {
-        return dateJoined;
-    }
-
-    public void setDateJoined(LocalDate dateJoined) {
-        this.dateJoined = dateJoined;
     }
 }

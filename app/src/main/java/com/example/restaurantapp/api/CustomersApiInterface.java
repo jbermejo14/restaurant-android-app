@@ -15,5 +15,5 @@ public interface CustomersApiInterface {
     Call<List<Customer>> getCustomers();
 
     @POST("customers")
-    Call<Customer> addCustomer(@Path("id") int id, @Body Customer customer);
+    Call<Customer> addCustomer(@Body Customer customer);
 }

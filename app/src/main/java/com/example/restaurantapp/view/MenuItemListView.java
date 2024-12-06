@@ -67,11 +67,6 @@ public class MenuItemListView extends AppCompatActivity  implements MenuItemList
         return true;
     }
 
-    private boolean checkIfUserIsAdmin() {
-        // Replace with your actual logic to check if the user is an admin
-        return "admin".equals(userRole);
-    }
-
     @Override
     public void ListMenuItems(List<MenuItem> menuitemList) {
         this.menuItemList.addAll(menuitemList);

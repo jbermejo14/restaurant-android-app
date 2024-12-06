@@ -24,8 +24,6 @@ public class CustomerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_activity);
 
-        populateList();
-
         RecyclerView customerView = findViewById(R.id.customer_view);
         customerView.hasFixedSize();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -39,11 +37,6 @@ public class CustomerActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_bar, menu);
         return true;
-    }
-
-    private void populateList() {
-        customerList = new ArrayList<>();
-        customerList.add(new Customer(1, "James", "email@email.com", "312341234", "adfasdfasdf", LocalDate.now()));
     }
 
 }
