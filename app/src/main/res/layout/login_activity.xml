@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".LoginActivity">
 
     <EditText
             android:layout_width="237dp"
@@ -22,14 +22,15 @@
             android:minHeight="48dp"
             android:autofillHints="password"
             android:labelFor="@id/password"
-            android:hint="@string/password"
+            android:hint="********"
             tools:ignore="LabelFor"/>
 
     <Button
-            android:text="@string/Log_In"
+            android:text="Log In"
             android:layout_width="99dp"
             android:layout_height="48dp"
             android:id="@+id/loginButton"
+            android:onClick="validateCustomer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -52,6 +53,23 @@
             android:minHeight="48dp"
             android:autofillHints="Username"
             android:labelFor="@id/username"
+            android:hint="John Doe"
             />
 
+    <Button
+            android:text="Don't have an account?"
+            android:layout_width="158dp"
+            android:layout_height="36dp"
+            android:id="@+id/button"
+            android:onClick="registerPage"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.761"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible"
+            app:layout_constraintHorizontal_bias="0.498"
+            android:textColor="@android:color/black"
+            android:background="@android:color/transparent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
