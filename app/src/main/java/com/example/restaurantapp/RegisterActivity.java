@@ -46,6 +46,12 @@ public class RegisterActivity extends AppCompatActivity implements RegisterCusto
         }
     }
 
+    public void loginPage(View view) {
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     public void showErrorMessage(String message) {
         Snackbar.make(findViewById(R.id.registerButton), message, BaseTransientBottomBar.LENGTH_INDEFINITE).show();
