@@ -9,11 +9,11 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-public interface CustomerApiInterface {
+public interface CustomersApiInterface {
 
     @GET("customers")
     Call<List<Customer>> getCustomers();
 
     @POST("customers")
-    Call<Customer> addCustomer(@Path("id") int id, @Body Customer customer);
+    Call<Customer> addCustomer(@Body Customer customer);
 }
