@@ -6,26 +6,24 @@ public class Reservation {
 
     private long id;
     private Date reservationDate;
-    private int numOfGuests;
     private Customer customer;
-    private Table table;
     private String status;
+    private MenuItem menuItem;
 
-    public Reservation(long id, Date reservationDate, int numOfGuests, Customer customer, Table table, String status) {
+    public Reservation(long id, Date reservationDate, Customer customer, MenuItem menuItem, String status) {
         this.id = id;
         this.reservationDate = reservationDate;
-        this.numOfGuests = numOfGuests;
         this.customer = customer;
-        this.table = table;
         this.status = status;
+        this.menuItem = menuItem;
     }
 
-    public int getNumOfGuests() {
-        return numOfGuests;
+    public MenuItem getMenuItem() {
+        return menuItem;
     }
 
-    public void setNumOfGuests(int numOfGuests) {
-        this.numOfGuests = numOfGuests;
+    public void setMenuItem(MenuItem menuItem) {
+        this.menuItem = menuItem;
     }
 
     public long getId() {
@@ -50,14 +48,6 @@ public class Reservation {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
-
-    public Table getTable() {
-        return table;
-    }
-
-    public void setTable(Table table) {
-        this.table = table;
     }
 
     public String getStatus() {

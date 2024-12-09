@@ -32,7 +32,6 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
     @Override
     public void onBindViewHolder(@NonNull ReservationAdapter.ReservationHolder reservationHolder, int position) {
         reservationHolder.reservationDate.setText(String.valueOf(reservationList.get(position).getReservationDate()));
-        reservationHolder.numOfGuests.setText(reservationList.get(position).getNumOfGuests());
     }
 
     @Override
@@ -43,14 +42,12 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
     public class ReservationHolder extends RecyclerView.ViewHolder {
 
         private TextView reservationDate;
-        private TextView numOfGuests;
 
         public ReservationHolder(@NonNull View itemView) {
             super(itemView);
 
 //            ADD RESERVATION ITEMS
             reservationDate = itemView.findViewById(R.id.item_reservationDate);
-            numOfGuests = itemView.findViewById(R.id.item_numOfGuests);
         }
     }
 }

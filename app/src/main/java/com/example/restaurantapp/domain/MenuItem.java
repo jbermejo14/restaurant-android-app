@@ -1,15 +1,15 @@
 package com.example.restaurantapp.domain;
 
-import java.time.LocalDate;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class MenuItem {
+public class MenuItem implements Parcelable {
     private long id;
     private String name;
     private String description;
     private double price;
     private String category;
     private boolean isVegetarian;
-    public boolean isSelected;
 
     public MenuItem(long id, String name, String description, double price, String category, Boolean isVegetarian) {
         this.id = id;
@@ -18,11 +18,9 @@ public class MenuItem {
         this.price = price;
         this.category = category;
         this.isVegetarian = isVegetarian;
-        this.isSelected = false;
     }
 
-
-
+    // Getters and setters
     public long getId() {
         return id;
     }
@@ -71,11 +69,39 @@ public class MenuItem {
         isVegetarian = vegetarian;
     }
 
-    public boolean isSelected() {
-        return isSelected;
+    protected MenuItem(Parcel in) {
+        id = in.readLong();
+        name = in.readString();
+        description = in.readString();
+        price = in.readDouble();
+        category = in.readString();
+        isVegetarian = in.readByte() != 0;
     }
 
-    public void setSelected(boolean selected) {
-        isSelected = selected;
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeString(name);
+        dest.writeString(description);
+        dest.writeDouble(price);
+        dest.writeString(category);
+        dest.writeByte((byte) (isVegetarian ? 1 : 0));
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<MenuItem> CREATOR = new Creator<MenuItem>() {
+        @Override
+        public MenuItem createFromParcel(Parcel in) {
+            return new MenuItem(in);
+        }
+
+        @Override
+        public MenuItem[] newArray(int size) {
+            return new MenuItem[size];
+        }
+    };
 }
