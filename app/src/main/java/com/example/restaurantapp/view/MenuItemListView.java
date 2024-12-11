@@ -91,18 +91,15 @@ public class MenuItemListView extends AppCompatActivity implements MenuItemListC
 
     // Method to handle the Next Button click
     private void onNextButtonClicked() {
-        List<MenuItem> selectedItems = menuItemAdapter.getSelectedMenuItems();
+        List<MenuItem> selectedMenuItems = menuItemAdapter.getSelectedMenuItems();
 
-
-        if (!selectedItems.isEmpty()) {
-
-            Intent intent = new Intent(this, RestaurantListView.class); // Next screen
-
-            intent.putParcelableArrayListExtra("selectedMenuItems", new ArrayList<>(selectedItems));
+        if (!selectedMenuItems.isEmpty()) {
+            Intent intent = new Intent(this, BeverageListView.class);
+            intent.putParcelableArrayListExtra("selectedMenuItems", new ArrayList<>(selectedMenuItems));
             startActivity(intent);
         } else {
-
             Toast.makeText(this, "Please select at least one item to proceed.", Toast.LENGTH_SHORT).show();
         }
     }
+
 }
