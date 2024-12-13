@@ -16,4 +16,7 @@ public interface CustomersApiInterface {
 
     @POST("customers")
     Call<Customer> addCustomer(@Body Customer customer);
+
+    @GET("customers/customerId")
+    Call<Customer> getCustomer(@Path("id") String customerId);
 }

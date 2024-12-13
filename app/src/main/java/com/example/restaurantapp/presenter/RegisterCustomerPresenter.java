@@ -27,7 +27,7 @@ public class RegisterCustomerPresenter implements RegisterCustomerContract.Prese
 
     @Override
     public void onRegisterCustomerSuccess(Customer registeredCustomer) {
-        view.showSuccessMessage("Coche registrado correctamente con el identificador " + registeredCustomer.getId());
+        view.showSuccessMessage("Customer Registered " + registeredCustomer.getId());
     }
 
     @Override

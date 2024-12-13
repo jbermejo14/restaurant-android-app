@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.example.restaurantapp.CustomerRoleView;
 import com.example.restaurantapp.MapActivity;
 import com.example.restaurantapp.R;
 import com.example.restaurantapp.adapter.RestaurantAdapter;
@@ -49,19 +50,6 @@ public class RestaurantListView extends AppCompatActivity implements RestaurantL
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_bar, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NotNull android.view.MenuItem item) {
-        if (item.getItemId() == R.id.action_map) {
-            Intent intent = new Intent(this, MapActivity.class);
-            startActivity(intent);
-        } else if (item.getItemId()  == R.id.action_register_customer) {
-            Intent intent = new Intent(this, RestaurantListView.class);
-            startActivity(intent);
-        }
-
         return true;
     }
 

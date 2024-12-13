@@ -17,7 +17,6 @@ import com.example.restaurantapp.R;
 import com.example.restaurantapp.adapter.BeverageAdapter;
 import com.example.restaurantapp.contract.BeverageListContract;
 import com.example.restaurantapp.domain.Beverage;
-import com.example.restaurantapp.domain.Reservation;
 import com.example.restaurantapp.presenter.BeverageListPresenter;
 
 import java.util.ArrayList;
@@ -28,7 +27,6 @@ public class BeverageListView extends AppCompatActivity implements BeverageListC
     private List<Beverage> beverageList;
     private BeverageListContract.Presenter presenter;
     private Button nextButton;
-    private Reservation reservation; // Store the reservation object
     private ArrayList<MenuItem> selectedMenuItems;
 
     @Override
@@ -69,7 +67,7 @@ public class BeverageListView extends AppCompatActivity implements BeverageListC
         if (item.getItemId() == R.id.action_map) {
             Intent intent = new Intent(this, MapActivity.class);
             startActivity(intent);
-        } else if (item.getItemId() == R.id.action_register_customer) {
+        } else if (item.getItemId() == R.id.admin_button) {
             Intent intent = new Intent(this, RestaurantListView.class);
             startActivity(intent);
         }

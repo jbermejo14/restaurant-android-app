@@ -3,7 +3,6 @@ package com.example.restaurantapp.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -16,7 +15,6 @@ import com.example.restaurantapp.R;
 import com.example.restaurantapp.adapter.MenuItemAdapter;
 import com.example.restaurantapp.contract.MenuItemListContract;
 import com.example.restaurantapp.domain.MenuItem;
-import com.example.restaurantapp.domain.Reservation;
 import com.example.restaurantapp.presenter.MenuItemListPresenter;
 
 import java.util.ArrayList;
@@ -27,7 +25,6 @@ public class MenuItemListView extends AppCompatActivity implements MenuItemListC
     private List<MenuItem> menuItemList;
     private MenuItemListContract.Presenter presenter;
     private Button nextButton;
-    private Reservation reservation; // Store the reservation object
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +63,7 @@ public class MenuItemListView extends AppCompatActivity implements MenuItemListC
         if (item.getItemId() == R.id.action_map) {
             Intent intent = new Intent(this, MapActivity.class);
             startActivity(intent);
-        } else if (item.getItemId() == R.id.action_register_customer) {
+        } else if (item.getItemId() == R.id.admin_button) {
             Intent intent = new Intent(this, RestaurantListView.class);
             startActivity(intent);
         }

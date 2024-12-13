@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.restaurantapp.R;
-import com.example.restaurantapp.domain.BasketItem;
 import com.example.restaurantapp.domain.Beverage;
 import com.example.restaurantapp.domain.MenuItem;
 
@@ -38,10 +37,13 @@ public class BasketAdapter extends RecyclerView.Adapter<BasketAdapter.BasketView
             MenuItem menuItem = (MenuItem) item;
             holder.name.setText(menuItem.getName());
             holder.description.setText(menuItem.getDescription());
+            holder.price.setText(String.valueOf(menuItem.getPrice()));
+
         } else if (item instanceof Beverage) {
             Beverage beverage = (Beverage) item;
             holder.name.setText(beverage.getName());
             holder.description.setText(beverage.getDescription());
+            holder.price.setText(String.valueOf(beverage.getPrice()));
         }
     }
 
@@ -51,12 +53,13 @@ public class BasketAdapter extends RecyclerView.Adapter<BasketAdapter.BasketView
     }
 
     public class BasketViewHolder extends RecyclerView.ViewHolder {
-        TextView name, description;
+        TextView name, description, price;
 
         public BasketViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_name);
             description = itemView.findViewById(R.id.item_description);
+            price = itemView.findViewById(R.id.item_price);
         }
     }
 }

@@ -29,6 +29,7 @@ android {
 }
 
 dependencies {
+//    implementation("com.fasterxml.jackson.core:jackson-databind")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.4.0")
     implementation("com.mapbox.maps:android:11.7.1")

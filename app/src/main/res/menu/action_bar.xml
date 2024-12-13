@@ -8,8 +8,9 @@
             app:showAsAction="always"
             android:id="@+id/action_map"/>
     <item
+            android:id="@+id/admin_button"
             android:title="Register Customer"
             android:icon="@android:drawable/ic_menu_add"
-            app:showAsAction="always"
-            android:id="@+id/action_register_customer"/>
+            android:visible="false"
+            app:showAsAction="ifRoom"/> <!-- Initially hidden -->
 </menu>
