@@ -3,21 +3,17 @@ package com.example.restaurantapp.domain;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class MenuItem implements Parcelable {
+public class Beverage implements Parcelable {
     private long id;
     private String name;
     private String description;
     private double price;
-    private String category;
-    private boolean isVegetarian;
 
-    public MenuItem(long id, String name, String description, double price, String category, Boolean isVegetarian) {
+    public Beverage(long id, String name, String description, double price) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.category = category;
-        this.isVegetarian = isVegetarian;
     }
 
     // Getters and setters
@@ -53,29 +49,11 @@ public class MenuItem implements Parcelable {
         this.price = price;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public Boolean getVegetarian() {
-        return isVegetarian;
-    }
-
-    public void setVegetarian(Boolean vegetarian) {
-        isVegetarian = vegetarian;
-    }
-
-    protected MenuItem(Parcel in) {
+    protected Beverage(Parcel in) {
         id = in.readLong();
         name = in.readString();
         description = in.readString();
         price = in.readDouble();
-        category = in.readString();
-        isVegetarian = in.readByte() != 0;
     }
 
     @Override
@@ -84,8 +62,6 @@ public class MenuItem implements Parcelable {
         dest.writeString(name);
         dest.writeString(description);
         dest.writeDouble(price);
-        dest.writeString(category);
-        dest.writeByte((byte) (isVegetarian ? 1 : 0));
     }
 
     @Override

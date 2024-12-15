@@ -1,49 +1,48 @@
 package com.example.restaurantapp.view;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.restaurantapp.MapActivity;
 import com.example.restaurantapp.R;
-import com.example.restaurantapp.adapter.RestaurantAdapter;
-import com.example.restaurantapp.contract.RestaurantListContract;
-import com.example.restaurantapp.domain.Restaurant;
-import com.example.restaurantapp.presenter.RestaurantListPresenter;
+import com.example.restaurantapp.adapter.BasketAdapter;
+import com.example.restaurantapp.adapter.OrderAdapter;
+import com.example.restaurantapp.contract.OrderListContract;
+import com.example.restaurantapp.domain.Order;
+import com.example.restaurantapp.presenter.OrderListPresenter;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestaurantListView extends AppCompatActivity implements RestaurantListContract.View{
-    private RestaurantAdapter restaurantAdapter;
-    private List<Restaurant> restaurantList;
-    private RestaurantListContract.Presenter presenter;
+public class BasketListView extends AppCompatActivity implements OrderListContract.View{
+    private OrderAdapter orderAdapter;
+    private List<Order> orderList;
+    private OrderListContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.restaurant_activity);
+        setContentView(R.layout.order_list_activity);
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        presenter = new RestaurantListPresenter(this);
-        presenter.loadRestaurants();
+        presenter = new OrderListPresenter(this);
+        presenter.loadOrders();
 
-        restaurantList = new ArrayList<>();
+        orderList = new ArrayList<>();
 
-        RecyclerView restaurantView = findViewById(R.id.restaurant_view);
-        restaurantView.hasFixedSize();
+        RecyclerView orderView = findViewById(R.id.order_view);
+        orderView.hasFixedSize();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        restaurantView.setLayoutManager(layoutManager);
+        orderView.setLayoutManager(layoutManager);
 
-        restaurantAdapter = new RestaurantAdapter(restaurantList);
-        restaurantView.setAdapter(restaurantAdapter);
+        orderAdapter = new OrderAdapter(orderList);
+        orderView.setAdapter(orderAdapter);
     }
 
     @Override
@@ -68,9 +67,9 @@ public class RestaurantListView extends AppCompatActivity implements RestaurantL
     }
 
     @Override
-    public void ListRestaurants(List<Restaurant> restaurantList) {
-        this.restaurantList.addAll(restaurantList);
-        restaurantAdapter.notifyDataSetChanged();
+    public void ListOrders(List<Order> orderList) {
+        this.orderList.addAll(orderList);
+        orderAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -83,3 +82,4 @@ public class RestaurantListView extends AppCompatActivity implements RestaurantL
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 }
+

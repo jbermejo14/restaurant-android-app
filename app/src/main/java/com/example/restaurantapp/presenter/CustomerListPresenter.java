@@ -20,9 +20,15 @@ public class CustomerListPresenter implements CustomerListContract.Presenter, Cu
     }
 
     @Override
-    public void onLoadCustomerSuccess(List<Customer> customerList) {
+    public void onLoadCustomersSuccess(List<Customer> customerList) {
         view.ListCustomers(customerList);
     }
+
+    @Override
+    public void onLoadCustomerSuccess(Customer customer) {
+        view.ListCustomer(customer);
+    }
+
 
     @Override
     public void onLoadCustomerFailed(String message) {
@@ -32,5 +38,14 @@ public class CustomerListPresenter implements CustomerListContract.Presenter, Cu
     @Override
     public void loadCustomers() {
         model.loadCustomers(this);
+    }
+
+    @Override
+    public void loadCustomer(int customerId) {
+        if (customerId == 0) {
+            view.showErrorMessage("El campo marca no puede estar vacío");
+            return;
+        }
+        model.loadCustomer(this, customerId);
     }
 }

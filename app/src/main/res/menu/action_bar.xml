@@ -8,8 +8,13 @@
             app:showAsAction="always"
             android:id="@+id/action_map"/>
     <item
+            android:id="@+id/profile_button"
             android:title="Register Customer"
-            android:icon="@android:drawable/ic_menu_add"
-            app:showAsAction="always"
-            android:id="@+id/action_register_customer"/>
+            android:icon="@android:drawable/ic_menu_info_details"
+            app:showAsAction="always"/>
+    <item
+            android:id="@+id/orders_button"
+            android:title="Orders"
+            android:icon="@android:drawable/ic_menu_today"
+            app:showAsAction="always"/>
 </menu>

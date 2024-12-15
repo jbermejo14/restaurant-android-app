@@ -69,6 +69,11 @@ public class LoginActivity extends AppCompatActivity implements CustomerListCont
     }
 
     @Override
+    public void ListCustomer(Customer customer) {
+
+    }
+
+    @Override
     public void showErrorMessage(String message) {
         Snackbar.make(findViewById(R.id.loginButton), message, BaseTransientBottomBar.LENGTH_INDEFINITE).show();
     }
@@ -80,6 +85,7 @@ public class LoginActivity extends AppCompatActivity implements CustomerListCont
                     @Override
                     public void onDismissed(Snackbar snackbar, int event) {
                         super.onDismissed(snackbar, event);
+
                         Intent intent = new Intent(LoginActivity.this, RestaurantListView.class);
                         startActivity(intent);
                         finish();
