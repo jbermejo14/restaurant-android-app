@@ -7,7 +7,10 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
+
 
 public interface CustomersApiInterface {
 
@@ -19,4 +22,7 @@ public interface CustomersApiInterface {
 
     @GET("customers/{customerId}")
     Call<Customer> getCustomer(@Path("customerId") int customerId);
+
+    @PUT("customers/{customerId}")
+    Call<Void> updateCustomer(@Path("customerId") long id, @Body Customer customer);
 }

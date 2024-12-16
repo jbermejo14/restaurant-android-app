@@ -1,95 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
-    <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.EditCustomer">
 
-        <!-- User Name -->
-        <TextView
-                android:id="@+id/userNameLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Name:"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
+    <EditText
+            android:id="@+id/username"
+            android:layout_width="237dp"
+            android:layout_height="59dp"
+            android:inputType="text"
+            android:ems="10"
+            android:hint="Username"
+            android:text="@string/username"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45"/>
 
-        <TextView
-                android:id="@+id/userName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="John Doe"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"/>
+    <EditText
+            android:id="@+id/password"
+            android:layout_width="237dp"
+            android:layout_height="59dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:hint="********"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username"
+            app:layout_constraintVertical_bias="0.55"/>
 
-        <!-- User Email -->
-        <TextView
-                android:id="@+id/userEmailLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email:"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
+    <EditText
+            android:id="@+id/password2"
+            android:layout_width="237dp"
+            android:layout_height="59dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:hint="********"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            app:layout_constraintVertical_bias="0.65"/>
 
-        <TextView
-                android:id="@+id/userEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="john.doe@example.com"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"/>
-
-        <!-- User Phone -->
-        <TextView
-                android:id="@+id/userPhoneLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Phone:"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
-
-        <TextView
-                android:id="@+id/userPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="+123 456 7890"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"/>
-
-        <!-- User Password -->
-        <TextView
-                android:id="@+id/userPasswordLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Password:"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
-
-        <TextView
-                android:id="@+id/userPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="••••••••"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"/>
-
-        <!-- Edit Button -->
-        <Button
-                android:id="@+id/editButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Edit"
-                android:backgroundTint="@color/my_action_bar_color"
-                android:textColor="@android:color/white"/>
-
-    </LinearLayout>
+    <Button
+            android:id="@+id/loginButton"
+            android:text="Edit Profile"
+            android:layout_width="99dp"
+            android:layout_height="48dp"
+            android:onClick="validateCustomer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password2"
+            app:layout_constraintVertical_bias="0.75"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

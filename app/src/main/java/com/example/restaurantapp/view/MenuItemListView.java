@@ -61,7 +61,7 @@ public class MenuItemListView extends AppCompatActivity implements MenuItemListC
             Intent intent = new Intent(this, MapActivity.class);
             startActivity(intent);
         } else if (item.getItemId() == R.id.profile_button) {
-            Intent intent = new Intent(this, EditCustomer.class);
+            Intent intent = new Intent(this, CustomerProfileView.class);
             startActivity(intent);
         } else if (item.getItemId() == R.id.orders_button) {
             Intent intent = new Intent(this, BasketListView.class);

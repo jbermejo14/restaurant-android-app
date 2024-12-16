@@ -1,6 +1,8 @@
 package com.example.restaurantapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -22,14 +24,24 @@ public class LoginActivity extends AppCompatActivity implements CustomerListCont
     private EditText customerNameField;
     private EditText customerPasswordField;
     private CustomerListPresenter presenter;
+    String username, password;
+    public static final String SHARED_PREFS = "shared_prefs";
+    public static final String USER_KEY = "user_key";
+    public static final String PASSWORD_KEY = "password_key";
+    SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+        sharedpreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
 
         customerNameField = findViewById(R.id.username);
         customerPasswordField = findViewById(R.id.password);
+
+        username = sharedpreferences.getString(USER_KEY, null);
+        password = sharedpreferences.getString(PASSWORD_KEY, null);
+
 
         presenter = new CustomerListPresenter(this);
 
@@ -85,7 +97,12 @@ public class LoginActivity extends AppCompatActivity implements CustomerListCont
                     @Override
                     public void onDismissed(Snackbar snackbar, int event) {
                         super.onDismissed(snackbar, event);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
 
+                        editor.putString(USER_KEY, customerNameField.getText().toString());
+                        editor.putString(PASSWORD_KEY, customerPasswordField.getText().toString());
+
+                        editor.apply();
                         Intent intent = new Intent(LoginActivity.this, RestaurantListView.class);
                         startActivity(intent);
                         finish();

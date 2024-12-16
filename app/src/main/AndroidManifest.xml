@@ -31,12 +31,17 @@
                 android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity
-                android:name=".view.EditCustomer"
+                android:name=".view.CustomerProfileView"
                 android:exported="false"
                 android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity
                 android:name=".view.BeverageListView"
+                android:exported="false"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+                android:name=".view.EditCustomer"
                 android:exported="false"
                 android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
