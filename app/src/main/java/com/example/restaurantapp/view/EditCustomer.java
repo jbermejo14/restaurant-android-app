@@ -1,21 +1,39 @@
 package com.example.restaurantapp.view;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.restaurantapp.R;
+import com.example.restaurantapp.contract.CustomerListContract;
+import com.example.restaurantapp.contract.RestaurantListContract;
+import com.example.restaurantapp.domain.Customer;
+import com.example.restaurantapp.presenter.CustomerListPresenter;
+import com.example.restaurantapp.presenter.RestaurantListPresenter;
 
-public class EditCustomer extends AppCompatActivity {
+import java.util.List;
 
+public class EditCustomer extends AppCompatActivity implements CustomerListContract.View {
+
+    private CustomerListPresenter presenter;
     private EditText usernameEditText;
     private EditText passwordEditText;
     private EditText password2EditText;
+    public static final String SHARED_PREFS = "shared_prefs";
+    public static final String USER_KEY = "user_key";
+    SharedPreferences sharedpreferences;
+    String customerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_customer);
+
+        sharedpreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+
+        customerName = sharedpreferences.getString(USER_KEY, null);
 
         // Initialize the EditText fields
         usernameEditText = findViewById(R.id.username);
@@ -45,10 +63,34 @@ public class EditCustomer extends AppCompatActivity {
             return;
         }
 
-//        updateCustomerProfile(username, password);
+        presenter = new CustomerListPresenter(this);
+        presenter.loadCustomerByName(customerName);
+
+
+        updateCustomerProfile(username, password);
     }
 
     private void updateCustomerProfile(String username, String password) {
         Toast.makeText(this, "Profile updated successfully!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void ListCustomers(List<Customer> menuitemList) {
+
+    }
+
+    @Override
+    public void ListCustomer(Customer customer) {
+
+    }
+
+    @Override
+    public void showErrorMessage(String message) {
+
+    }
+
+    @Override
+    public void showSuccessMessage(String message) {
+
     }
 }

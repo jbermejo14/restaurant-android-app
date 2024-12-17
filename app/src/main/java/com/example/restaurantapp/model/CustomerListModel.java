@@ -64,4 +64,28 @@ public class CustomerListModel implements CustomerListContract.Model {
             }
         });
     }
+
+    @Override
+    public void loadCustomerByName(OnCustomerLoadedListener listener, String customerName) {
+        CustomersApiInterface customersApi = CustomersApi.buildInstance();
+        Call<Customer> getCustomerCall = customersApi.getCustomerByName(customerName);
+        getCustomerCall.enqueue(new Callback<Customer>() {
+            @Override
+            public void onResponse(Call<Customer> call, Response<Customer> response) {
+                if (response.code() == 200) {
+                    listener.onLoadCustomerSuccess(response.body());
+                } else if (response.code() == 500 ){
+                    listener.onLoadCustomerFailed("La API no se encuentra disponible en este momento. Prueba de nuevo");
+                } else {
+                    listener.onLoadCustomerFailed(String.valueOf(response.code()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Customer> call, Throwable t) {
+                listener.onLoadCustomerFailed("No se puedo conectar con el origen de datos. " +
+                        "Comprueba la conexión e inténtalo otra vez");
+            }
+        });
+    }
 }

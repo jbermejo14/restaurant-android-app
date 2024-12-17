@@ -48,4 +48,13 @@ public class CustomerListPresenter implements CustomerListContract.Presenter, Cu
         }
         model.loadCustomer(this, customerId);
     }
+
+    @Override
+    public void loadCustomerByName(String customerName) {
+        if (customerName == null) {
+            view.showErrorMessage("El campo marca no puede estar vacío");
+            return;
+        }
+        model.loadCustomerByName(this, customerName);
+    }
 }

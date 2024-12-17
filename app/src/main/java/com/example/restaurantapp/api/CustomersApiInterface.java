@@ -23,6 +23,9 @@ public interface CustomersApiInterface {
     @GET("customers/{customerId}")
     Call<Customer> getCustomer(@Path("customerId") int customerId);
 
+    @GET("customers/search")
+    Call<Customer> getCustomerByName(@Query("name") String name);
+
     @PUT("customers/{customerId}")
     Call<Void> updateCustomer(@Path("customerId") long id, @Body Customer customer);
 }

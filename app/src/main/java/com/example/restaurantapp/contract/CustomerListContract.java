@@ -13,6 +13,7 @@ public interface CustomerListContract {
         }
         void loadCustomers(OnCustomerLoadedListener listener);
         void loadCustomer(OnCustomerLoadedListener listener, int customerId);
+        void loadCustomerByName(OnCustomerLoadedListener listener, String customerName);
     }
 
     interface View {
@@ -25,5 +26,7 @@ public interface CustomerListContract {
     interface Presenter {
         void loadCustomers();
         void loadCustomer(int customerId);
+        void loadCustomerByName(String customerName);
+
     }
 }

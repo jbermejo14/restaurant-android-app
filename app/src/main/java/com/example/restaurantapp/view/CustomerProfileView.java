@@ -23,12 +23,7 @@ public class CustomerProfileView extends AppCompatActivity implements CustomerLi
     private Button editButton;
     private CustomerListPresenter presenter;
     public static final String SHARED_PREFS = "shared_prefs";
-
-    // key for storing email.
     public static final String USER_KEY = "user_key";
-
-    // key for storing password.
-    public static final String PASSWORD_KEY = "password_key";
     SharedPreferences sharedpreferences;
     String customerName;
 
